@@ -1,0 +1,25 @@
+{
+  "preload": "preload.js",
+  "logo": "logo.png",
+  "platform": [
+    "win32"
+  ],
+  "features": [
+    {
+      "code": "open_ai_translator",
+      "explain": "OpenAI Translator",
+      "logo": "logo.png",
+      "platform": [
+        "win32"
+      ],
+      "cmds": [
+        {
+          "type": "over",
+          "label": "OpenAI Translator",
+          "minLength": 1,
+          "maxLength": 65536
+        }
+      ]
+    }
+  ]
+}
