@@ -17,7 +17,7 @@
           "type": "over",
           "label": "OpenAI Translator",
           "minLength": 1,
-          "maxLength": 65536
+          "maxLength": 10000
         }
       ]
     }

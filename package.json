@@ -1,0 +1,28 @@
+{
+  "name": "input-translator-utools",
+  "version": "0.0.1",
+  "author": "Ryan",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:preload": "webpack --config ./webpack.preload.ts"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@types/node": "^20.11.20",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "eslint": "^8.57.0",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "utools-api-types": "^4.0.0",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
+  },
+  "devEngines": {
+    "node": ">=16.x",
+    "npm": ">=8.x"
+  },
+  "license": "LGPL-2.1-or-later"
+}
