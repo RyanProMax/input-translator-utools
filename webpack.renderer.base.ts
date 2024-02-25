@@ -8,6 +8,9 @@ const baseConfiguration: Configuration = {
     index: path.join(__dirname, 'src/renderer/entry/index.tsx'),
   },
   resolve: {
+    alias: {
+      '@': path.join(__dirname, 'src'),
+    },
     extensions: ['.tsx', '.ts', '.js'],
   },
   module: {
