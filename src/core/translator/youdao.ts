@@ -4,6 +4,7 @@ import { v4 } from 'uuid';
 import { AbstractTranslator, Singleton } from './base';
 import callApi from '@/core/callApi';
 import { PlatForm } from '@/constant';
+import { getTranslatorConfig } from './utils';
 
 export default class YouDao extends Singleton implements AbstractTranslator {
 
@@ -16,9 +17,7 @@ export default class YouDao extends Singleton implements AbstractTranslator {
   async translator({
     query, from = 'auto', to = 'en'
   }: Translator.CommonRequest) {
-    const app_id = window.utools.dbStorage.getItem(`${PlatForm.YouDao}_app_id`);
-    const app_key = window.utools.dbStorage.getItem(`${PlatForm.YouDao}_app_key`);
-
+    const { app_id, app_key } = getTranslatorConfig(PlatForm.YouDao);
     if (!app_id || !app_key) {
       throw new Error('请先设置应用id和key');
     }
@@ -27,7 +26,6 @@ export default class YouDao extends Singleton implements AbstractTranslator {
     const curtime = String(Math.round(Date.now() / 1000));
     const str1 = `${app_id}${this.truncate(query)}${salt}${curtime}${app_key}`;
     const sign = CryptoJS.SHA256(str1).toString(CryptoJS.enc.Hex);
-
 
     const params: YouDao.TextTranslatorRequest = {
       q: query,

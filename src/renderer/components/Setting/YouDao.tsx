@@ -2,35 +2,29 @@ import { useEffect } from 'react';
 import { Form, Input } from 'antd';
 
 import { PlatForm } from '@/constant';
+import { getTranslatorConfig, updateTranslatorConfig } from '@/core/translator/utils';
 
 type FieldType = {
   app_id?: string;
   app_key?: string;
 };
 
-const Keys = {
-  app_id: `${PlatForm.YouDao}_app_id`,
-  app_key: `${PlatForm.YouDao}_app_key`,
-};
-
 export default () => {
   const [form] = Form.useForm();
 
-  const onValuesChange = (changedValues: Record<string, unknown>) => {
-    // console.log('changedValues', changedValues);
-    Object.entries(changedValues).forEach(([key, value]) => {
-      if (key) {
-        utools.dbStorage.setItem(`${PlatForm.YouDao}_${key}`, value);
-      }
-    });
+  const onValuesChange = (
+    changedValues: Record<string, unknown>,
+    allValues: Record<string, unknown>,
+  ) => {
+    console.log('allValues', allValues);
+    updateTranslatorConfig(PlatForm.YouDao, allValues);
   };
 
   // initialize
   useEffect(() => {
-    form.setFieldsValue({
-      app_id: utools.dbStorage.getItem(Keys.app_id),
-      app_key: utools.dbStorage.getItem(Keys.app_key),
-    });
+    form.setFieldsValue(
+      getTranslatorConfig(PlatForm.YouDao)
+    );
   }, []);
 
   return (
