@@ -11,7 +11,6 @@ const configuration: Configuration = {
   output: {
     path: path.join(process.cwd(), 'build'),
     filename: '[name].js',
-    clean: true,
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js']

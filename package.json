@@ -4,9 +4,9 @@
   "author": "Ryan",
   "description": "",
   "scripts": {
-    "start": "pnpm start:renderer && pnpm start:main",
     "start:renderer": "cross-env NODE_ENV=development webpack serve --config ./webpack.renderer.dev.ts",
     "start:main": "cross-env NODE_ENV=development webpack --watch --config ./webpack.main.ts",
+    "build": "pnpm build:renderer & pnpm build:main",
     "build:renderer": "cross-env NODE_ENV=production webpack --config ./webpack.renderer.prod.ts",
     "build:main": "cross-env NODE_ENV=production webpack --config ./webpack.main.ts",
     "test": "ts-node --files ./test/index"

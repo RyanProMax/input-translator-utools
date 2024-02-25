@@ -1,5 +1,9 @@
 {
   "preload": "preload.js",
+  "main": "index.html",
+  "development": {
+    "main": "http://localhost:9527/index.html"
+  },
   "logo": "logo.png",
   "platform": [
     "win32"
@@ -9,6 +13,7 @@
       "code": "translate_and_paste",
       "explain": "翻译选中文字，并粘贴输入",
       "logo": "logo.png",
+      "mainPush": false,
       "platform": [
         "win32"
       ],
