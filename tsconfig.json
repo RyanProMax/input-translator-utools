@@ -1,9 +1,5 @@
 {
   "compilerOptions": {
-    "types": [
-      "@types/node",
-      "utools-api-types",
-    ],
     "incremental": true,
     "target": "es2021",
     "module": "commonjs",

@@ -1,3 +1,5 @@
+/// <reference types="utools-api-types" />
+
 declare namespace _UTools {
   type PreloadExports = Record<string, _UTools.IExports>;
 

@@ -5,7 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:preload": "webpack --config ./webpack.preload.ts"
+    "build:preload": "webpack --config ./webpack.preload.ts",
+    "test": "ts-node --files ./test/index"
   },
   "keywords": [],
   "devDependencies": {
