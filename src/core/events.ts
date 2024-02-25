@@ -22,7 +22,7 @@ export const registerUToolsHook = ({ navigate }: {
             window.utools.hideMainWindowPasteText(translation.join('\r\n'));
           }
           return;
-        };
+        }
         case 'translate_setting': {
           navigate('/setting');
           return;

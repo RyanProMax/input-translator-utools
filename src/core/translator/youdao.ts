@@ -1,13 +1,13 @@
 import CryptoJS from 'crypto-js';
 import { v4 } from 'uuid';
 
-import { YouDaoSecret } from '../../secret';
 import { AbstractTranslator, Singleton } from './base';
-import callApi from '../callApi';
+import callApi from '@/core/callApi';
+import { PlatForm } from '@/constant';
 
 export default class YouDao extends Singleton implements AbstractTranslator {
-  app_id = YouDaoSecret.app_id;
-  app_key = YouDaoSecret.app_key;
+  app_id = window.utools.dbStorage.getItem(`${PlatForm.YouDao}_app_id`);
+  app_key = window.utools.dbStorage.getItem(`${PlatForm.YouDao}_app_key`);
 
   private truncate(q: string) {
     const len = q.length;
@@ -30,7 +30,7 @@ export default class YouDao extends Singleton implements AbstractTranslator {
       from,
       to,
       sign,
-      signType: "v3",
+      signType: 'v3',
       curtime,
     };
 
@@ -48,8 +48,8 @@ export default class YouDao extends Singleton implements AbstractTranslator {
     }
     return {
       from, to, translation,
-    } as Translator.CommonResponse
-  };
+    } as Translator.CommonResponse;
+  }
 }
 
 export const youDaoInstance = YouDao.getInstance<YouDao>();

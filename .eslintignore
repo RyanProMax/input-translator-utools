@@ -9,6 +9,6 @@ node_modules
 # ignore markdown or use eslint-plugin-markdown
 *.md
 
-**/dist
+build/**/*
 
 LICENSE
