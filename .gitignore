@@ -1,4 +1,8 @@
 # Dependency directory
 node_modules
 
-secret.*
+# dist
+# build
+
+# secret
+**/secret.*

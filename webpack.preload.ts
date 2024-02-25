@@ -22,7 +22,8 @@ const configuration: Configuration = {
         exclude: /node_modules/,
       },
     ],
-  }
+  },
+  devtool: 'source-map',
 };
 
 export default configuration;

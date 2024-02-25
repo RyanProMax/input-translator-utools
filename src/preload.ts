@@ -1,19 +1,17 @@
 // import { translate } from "./core";
 
+import { youDaoInstance } from "./core/translator/youdao";
+
 window.exports = {
   "open_ai_translator": {
     mode: "none",
     args: {
-      enter: (action) => {
+      enter: async (action) => {
         try {
-          // window.utools.showNotification(`enter ${JSON.stringify(action)}`);
           const { type, payload } = action;
           if (type === 'over' && payload) {
-            /* const output = translate(payload);
-            window.utools.hideMainWindowPasteText(output);
-            setTimeout(() => {
-              window.utools.hideMainWindowPasteText(`${output} + 1`);
-            }, 1000); */
+            const { translation } = await youDaoInstance.translator({ query: payload });
+            window.utools.hideMainWindowPasteText(translation.join('\r\n'));
           }
         } catch (e) {
           window.utools.showNotification((e as Error)?.message);

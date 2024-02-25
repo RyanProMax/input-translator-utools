@@ -5,6 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "pnpm watch:preload",
+    "watch:preload": "webpack --watch --config ./webpack.preload.ts",
     "build:preload": "webpack --config ./webpack.preload.ts",
     "test": "ts-node --files ./test/index"
   },
