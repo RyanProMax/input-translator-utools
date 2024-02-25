@@ -1,4 +1,5 @@
 /// <reference types="utools-api-types" />
+/// <reference types="webpack-dev-server" />
 
 declare namespace _UTools {
   type PreloadExports = Record<string, _UTools.IExports>;
