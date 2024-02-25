@@ -13,6 +13,7 @@
   },
   "keywords": [],
   "dependencies": {
+    "antd": "^5.14.2",
     "axios": "^1.6.7",
     "crypto-js": "^4.2.0",
     "franc-min": "^6.2.0",
