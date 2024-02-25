@@ -4,7 +4,8 @@ Real-time input translation tool.
 
 ## Features
 
-- [ ] Input Translation
+- [x] Input Translation
+- [x] YouDao Translation
 - [ ] OpenAI Translator
 
 ## License
