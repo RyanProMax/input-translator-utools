@@ -6,8 +6,8 @@
   ],
   "features": [
     {
-      "code": "open_ai_translator",
-      "explain": "OpenAI Translator",
+      "code": "translate_and_paste",
+      "explain": "翻译选中文字，并粘贴输入",
       "logo": "logo.png",
       "platform": [
         "win32"
@@ -15,7 +15,23 @@
       "cmds": [
         {
           "type": "over",
-          "label": "OpenAI Translator",
+          "label": "翻译并输入",
+          "minLength": 1,
+          "maxLength": 10000
+        }
+      ]
+    },
+    {
+      "code": "translate_only",
+      "explain": "打开翻译面板，并翻译选中文字",
+      "logo": "logo.png",
+      "platform": [
+        "win32"
+      ],
+      "cmds": [
+        {
+          "type": "over",
+          "label": "面板翻译",
           "minLength": 1,
           "maxLength": 10000
         }
