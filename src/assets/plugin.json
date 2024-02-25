@@ -27,18 +27,18 @@
       ]
     },
     {
-      "code": "translate_only",
-      "explain": "打开翻译面板，并翻译选中文字",
+      "code": "translate_setting",
+      "explain": "翻译设置",
       "logo": "logo.png",
       "platform": [
         "win32"
       ],
       "cmds": [
+        "翻译设置",
+        "settings",
         {
           "type": "over",
-          "label": "面板翻译",
-          "minLength": 1,
-          "maxLength": 10000
+          "label": "翻译设置"
         }
       ]
     }

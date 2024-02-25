@@ -1,9 +1,12 @@
 import { franc } from 'franc-min';
+import { NavigateFunction } from 'react-router-dom';
 
 import { youDaoInstance } from '@/core/translator/youdao';
 import { FrancLanguage } from '@/constant';
 
-export const registerUToolsHook = () => {
+export const registerUToolsHook = ({ navigate }: {
+  navigate: NavigateFunction
+}) => {
   window.utools.onPluginEnter(async (action) => {
     try {
       console.log('[onPluginEnter] action', action);
@@ -16,11 +19,12 @@ export const registerUToolsHook = () => {
               query: payload,
               to: language === FrancLanguage.CN ? 'en' : 'zh-CHS',
             });
-            // window.utools.hideMainWindowPasteText(translation.join('\r\n'));
+            window.utools.hideMainWindowPasteText(translation.join('\r\n'));
           }
           return;
         };
-        case 'translate_only': {
+        case 'translate_setting': {
+          navigate('/setting');
           return;
         }
         default: return;
