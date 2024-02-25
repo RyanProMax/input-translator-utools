@@ -1,5 +1,6 @@
 import { Configuration } from 'webpack';
 import path from 'path';
+import CopyPlugin from 'copy-webpack-plugin';
 
 const configuration: Configuration = {
   mode: 'production',
@@ -10,6 +11,7 @@ const configuration: Configuration = {
   output: {
     path: path.join(process.cwd(), 'build'),
     filename: '[name].js',
+    clean: true,
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js']
@@ -24,6 +26,16 @@ const configuration: Configuration = {
     ],
   },
   devtool: 'source-map',
+  plugins: [
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.join(__dirname, 'src/assets'),
+          to: path.join(__dirname, 'build'),
+        }
+      ]
+    }),
+  ]
 };
 
 export default configuration;

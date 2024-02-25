@@ -5,9 +5,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "pnpm watch:preload",
-    "watch:preload": "webpack --watch --config ./webpack.preload.ts",
-    "build:preload": "webpack --config ./webpack.preload.ts",
+    "start": "pnpm watch:main",
+    "watch:main": "webpack --watch --config ./webpack.main.ts",
+    "build:main": "webpack --config ./webpack.main.ts",
+    "build:copy": "webpack --config ./webpack.copy.ts",
     "test": "ts-node --files ./test/index"
   },
   "keywords": [],
@@ -22,6 +23,7 @@
     "@types/uuid": "^9.0.8",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",
+    "copy-webpack-plugin": "^12.0.2",
     "eslint": "^8.57.0",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
